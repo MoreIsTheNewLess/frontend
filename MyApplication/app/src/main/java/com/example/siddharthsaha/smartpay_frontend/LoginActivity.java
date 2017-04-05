@@ -21,10 +21,9 @@ public class LoginActivity extends AppCompatActivity {
             String uname = a.getText().toString();
             EditText p = (EditText) findViewById(R.id.passFill);
             String pass = p.getText().toString();
-
             String password = assist.searchPass(uname);
             if(pass.equals(password)) {
-                Intent i = new Intent(this, MainActivity.class);
+                Intent i = new Intent(this, UserActivity.class);
                 i.putExtra("Username", uname);
                 startActivity(i);
             }

@@ -52,6 +52,41 @@ public class DataBaseAssistant extends SQLiteOpenHelper {
         return b;
     }
 
+    public String getFullName(String uname) {
+        db = this.getReadableDatabase();
+        String query = "select uname, name from " + TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+        String a,b;
+        b = "not found";
+        if(cursor.moveToFirst()) {
+            do {
+                a = cursor.getString(0);
+                if(a.equals(uname)) {
+                    b = cursor.getString(1);
+                    break;
+                }
+            }while(cursor.moveToNext());
+        }
+        return b;
+    }
+
+    public String getEmail(String uname) {
+        db = this.getReadableDatabase();
+        String query = "select uname, email from " + TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+        String a,b;
+        b = "not found";
+        if(cursor.moveToFirst()) {
+            do {
+                a = cursor.getString(0);
+                if(a.equals(uname)) {
+                    b = cursor.getString(1);
+                    break;
+                }
+            }while(cursor.moveToNext());
+        }
+        return b;
+    }
     public void insertAccount(Account acc) {
         db=this.getWritableDatabase();
         ContentValues values = new ContentValues();

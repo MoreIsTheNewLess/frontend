@@ -1,60 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_gravity="center"-->
-    <!--tools:context="com.example.siddharthsaha.smartpay_frontend.LoginActivityy">-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:layout_gravity="center"-->
+<!--tools:context="com.example.siddharthsaha.smartpay_frontend.LoginActivityy">-->
 
-    <!--<RelativeLayout-->
-        <!--android:layout_width="368dp"-->
-        <!--android:layout_height="495dp"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--tools:layout_editor_absoluteY="8dp"-->
-        <!--tools:layout_editor_absoluteX="8dp">-->
+<!--<RelativeLayout-->
+<!--android:layout_width="368dp"-->
+<!--android:layout_height="495dp"-->
+<!--android:layout_alignParentTop="true"-->
+<!--android:layout_alignParentLeft="true"-->
+<!--android:layout_alignParentStart="true"-->
+<!--tools:layout_editor_absoluteY="8dp"-->
+<!--tools:layout_editor_absoluteX="8dp">-->
 
-        <!--<Button-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/Login"-->
-            <!--android:text="Login"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:onClick="onButtonClick"/>-->
+<!--<Button-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:id="@+id/Login"-->
+<!--android:text="Login"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--android:layout_centerVertical="true"-->
+<!--android:onClick="onButtonClick"/>-->
 
-        <!--<TextView-->
-            <!--android:id="@+id/Username"-->
-            <!--android:textSize="25dp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="45dp"-->
-            <!--android:text="Username"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_alignRight="@id/Login"-->
-            <!--/>-->
+<!--<TextView-->
+<!--android:id="@+id/Username"-->
+<!--android:textSize="25dp"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginTop="45dp"-->
+<!--android:text="Username"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--android:layout_alignRight="@id/Login"-->
+<!--/>-->
 
-        <!--<EditText-->
-            <!--android:id="@+id/UsernameFill"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_below="@+id/Username"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_marginTop="28dp"-->
-            <!--android:layout_marginEnd="28dp"-->
-            <!--android:layout_marginRight="28dp"-->
-            <!--android:layout_marginStart="28dp"-->
-            <!--android:layout_marginLeft="28dp"-->
-            <!--android:ems="10"-->
-            <!--android:inputType="textPersonName"-->
-            <!--android:text="" />-->
+<!--<EditText-->
+<!--android:id="@+id/UsernameFill"-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_alignParentEnd="true"-->
+<!--android:layout_alignParentRight="true"-->
+<!--android:layout_below="@+id/Username"-->
+<!--android:layout_centerHorizontal="true"-->
+<!--android:layout_marginTop="28dp"-->
+<!--android:layout_marginEnd="28dp"-->
+<!--android:layout_marginRight="28dp"-->
+<!--android:layout_marginStart="28dp"-->
+<!--android:layout_marginLeft="28dp"-->
+<!--android:ems="10"-->
+<!--android:inputType="textPersonName"-->
+<!--android:text="" />-->
 
 
-    <!--</RelativeLayout>-->
+<!--</RelativeLayout>-->
 <!--</android.support.constraint.ConstraintLayout>-->
 
 <ScrollView
@@ -82,10 +82,10 @@
         <!--  Header Ends -->
         <!-- Footer Start -->
         <!--<LinearLayout android:id="@+id/footer"-->
-            <!--android:layout_width="fill_parent"-->
-            <!--android:layout_height="90dip"-->
-            <!--android:background="@layout/footer_repeat"-->
-            <!--android:layout_alignParentBottom="true">-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="90dip"-->
+        <!--android:background="@layout/footer_repeat"-->
+        <!--android:layout_alignParentBottom="true">-->
         <!--</LinearLayout>-->
         <!-- Footer Ends -->
 
@@ -142,11 +142,11 @@
                 android:textColor="#0b84aa"/>
 
             <!--<Button android:id="@+id/Register"-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="10dip"-->
-                <!--android:onClick="onButtonClick"-->
-                <!--android:text="New TO ICICI? Register now"/>-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dip"-->
+            <!--android:onClick="onButtonClick"-->
+            <!--android:text="New TO ICICI? Register now"/>-->
             <!-- Link to Registration Screen -->
 
         </LinearLayout>
