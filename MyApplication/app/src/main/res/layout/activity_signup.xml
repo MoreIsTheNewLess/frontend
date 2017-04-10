@@ -95,6 +95,12 @@
                 android:singleLine="true"
                 android:layout_marginTop="5dip"/>
             <!-- Register Button -->
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="fill_parent"
@@ -113,11 +119,6 @@
                 android:textSize="20dip"
                 android:onClick="onLoginClick"
                 android:textColor="#0b84aa"/>
-            <!--<Button android:id="@+id/btnLogin"-->
-                <!--android:layout_width="fill_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginTop="10dip"-->
-                <!--android:text="already have an account? Log in"/>-->
 
         </LinearLayout>
         <!-- Registration Form Ends -->

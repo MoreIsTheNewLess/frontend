@@ -1,12 +1,12 @@
 package com.example.siddharthsaha.smartpay_frontend;
 
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Intent;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -15,17 +15,26 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class UserActivity extends AppCompatActivity {
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class DealerActivity extends AppCompatActivity {
 
     NotificationCompat.Builder notification;
-    private static final int uniqueID = 30912;
+    private static final int uniqueID = 21903;
     String username, emailid, fullname;
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -34,89 +43,88 @@ public class UserActivity extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private SectionsPagerAdapter mSectionsPagerAdapter1;
 
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
+    private ViewPager mViewPager1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user);
+        setContentView(R.layout.activity_dealer);
+
         DataBaseAssistant assist = new DataBaseAssistant(this);
 
         this.username = getIntent().getStringExtra("Username");
         emailid = assist.getEmail(username);
         fullname = assist.getFullName(username);
-//        tab1.setUN(username);
-//        TextView emailidtext = (TextView) findViewById(R.id.tab1EMDisplay);
-//        emailidtext.setText(emailid);
-//        TextView fullnametext = (TextView) findViewById(R.id.tab1FNDisplay);
-//        fullnametext.setText(fullname);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter1 = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager1 = (ViewPager) findViewById(R.id.container1);
+        mViewPager1.setAdapter(mSectionsPagerAdapter1);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(mViewPager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs1);
+        tabLayout.setupWithViewPager(mViewPager1);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab1);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Have a question?(soon to come)", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
-        notification = new NotificationCompat.Builder(this);
-        notification.setAutoCancel(true);
+
+    }
+
+    public void onProductsClick(View v) {
+
+        AlertDialog alertDialog = new AlertDialog.Builder(DealerActivity.this).create();
+        alertDialog.setTitle("Warning: ");
+        alertDialog.setMessage("The uploaded file should be of .csv format. The file should be kept in the SD card. It should have the following columns in the following order:\n" +
+                "1. Product Category\n" +
+                "2. Date Bought(MM-DD-YEAR(If the month is between January to September just type 1-9 and not 01-09))\n" +
+                "3. Product name\n");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
 
     }
 
 
-
-    public void onFoodClick(View v) {
-        notification.setTicker("This is a ticker");
-        notification.setWhen(System.currentTimeMillis());
-        notification.setSmallIcon(R.drawable.clock);
-        notification.setContentTitle("Food");
-        notification.setContentText("Don't forget to pay your food bills!");
-
-        Intent intent = new Intent(this, UserActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        notification.setContentIntent(pendingIntent);
-
-        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        nm.notify(uniqueID, notification.build());
+    public void onDealsClick(View v) {
+        AlertDialog alertDialog = new AlertDialog.Builder(DealerActivity.this).create();
+        alertDialog.setTitle("Warning: ");
+        alertDialog.setMessage("The uploaded file should be of .csv format. The file should be kept in the SD card. It should have the following columns in the following order:\n" +
+                "1. Product Category\n" +
+                "2. Deal\n" +
+                "3. Product name\n");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 
-    public void onSuggestClick(View v) {
-        notification.setTicker("This is a ticker");
-        notification.setWhen(System.currentTimeMillis());
-        notification.setSmallIcon(R.drawable.clock);
-        notification.setContentTitle("Life Skill");
-        notification.setContentText("Wash your hands before you eat!");
-        notification.setContentText("Wash your hands before you eat!");
 
-        Intent intent = new Intent(this, UserActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        notification.setContentIntent(pendingIntent);
-
-        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        nm.notify(uniqueID, notification.build());
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_user, menu);
+        getMenuInflater().inflate(R.menu.menu_dealer, menu);
         return true;
     }
 
@@ -135,9 +143,9 @@ public class UserActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
+//    /**
+//     * A placeholder fragment containing a simple view.
+//     */
 //    public static class PlaceholderFragment extends Fragment {
 //        /**
 //         * The fragment argument representing the section number for this
@@ -163,7 +171,7 @@ public class UserActivity extends AppCompatActivity {
 //        @Override
 //        public View onCreateView(LayoutInflater inflater, ViewGroup container,
 //                                 Bundle savedInstanceState) {
-//            View rootView = inflater.inflate(R.layout.usertab1accinfo, container, false);
+//            View rootView = inflater.inflate(R.layout.dealertab1accinfo, container, false);
 //            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 //            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
 //            return rootView;
@@ -174,6 +182,7 @@ public class UserActivity extends AppCompatActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -184,7 +193,7 @@ public class UserActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    UserInfoTab tab1 = new UserInfoTab();
+                    DealerInfoTab tab1 = new DealerInfoTab();
                     Bundle bundle = new Bundle();
                     bundle.putString("USERNAME_KEY", username);
                     bundle.putString("EMAIL_KEY", emailid);
@@ -192,10 +201,10 @@ public class UserActivity extends AppCompatActivity {
                     tab1.setArguments(bundle);
                     return tab1;
                 case 1:
-                    SuggestionsTab tab2 = new SuggestionsTab();
+                    ProductsTab tab2 = new ProductsTab();
                     return tab2;
                 case 2:
-                    RemindersTab tab3 = new RemindersTab();
+                    DealsTab tab3 = new DealsTab();
                     return tab3;
                 default:
                     return null;
@@ -214,9 +223,9 @@ public class UserActivity extends AppCompatActivity {
                 case 0:
                     return "ACCOUNT";
                 case 1:
-                    return "SUGGESTIONS";
+                    return "PRODUCTS";
                 case 2:
-                    return "REMINDERS";
+                    return "DEALS";
             }
             return null;
         }

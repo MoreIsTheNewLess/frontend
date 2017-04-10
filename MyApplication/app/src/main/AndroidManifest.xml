@@ -31,6 +31,10 @@
         <activity
             android:name=".UserActivity"
             android:label="SmartPay"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DealerActivity"
+            android:label="@string/title_activity_dealer"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

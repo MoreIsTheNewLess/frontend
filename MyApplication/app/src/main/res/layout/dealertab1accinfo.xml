@@ -6,38 +6,37 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.siddharthsaha.smartpay_frontend.UserActivity">
-    <!--$PlaceholderFragment-->
+    tools:context="com.example.siddharthsaha.smartpay_frontend.DealerActivity">
 
     <TextView
-        android:id="@+id/tab1UNDisplay"
+        android:id="@+id/tab1DUNDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tab1UNLabel"
-        android:layout_alignLeft="@+id/tab1UNLabel"
+        android:layout_alignBaseline="@+id/tab1DUNLabel"
+        android:layout_alignLeft="@+id/tab1DUNLabel"
         android:layout_marginLeft="80dp"
         android:singleLine="true" />
 
     <TextView
-        android:id="@+id/tab1FNDisplay"
+        android:id="@+id/tab1DFNDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tab1FNLabel"
-        android:layout_alignLeft="@+id/tab1FNLabel"
+        android:layout_alignBaseline="@+id/tab1DFNLabel"
+        android:layout_alignLeft="@+id/tab1DFNLabel"
         android:layout_marginLeft="80dp"
         android:singleLine="true" />
 
     <TextView
-        android:id="@+id/tab1EMDisplay"
+        android:id="@+id/tab1DEMDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tab1EMLabel"
-        android:layout_alignLeft="@+id/tab1EMLabel"
+        android:layout_alignBaseline="@+id/tab1DEMLabel"
+        android:layout_alignLeft="@+id/tab1DEMLabel"
         android:layout_marginLeft="55dp"
         android:singleLine="true" />
 
     <TextView
-        android:id="@+id/tab1UNLabel"
+        android:id="@+id/tab1DUNLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -49,24 +48,23 @@
         android:text="Username " />
 
     <TextView
-        android:id="@+id/tab1FNLabel"
+        android:id="@+id/tab1DFNLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tab1UNLabel"
-        android:layout_alignRight="@+id/tab1UNLabel"
-        android:layout_below="@+id/tab1UNLabel"
+        android:layout_alignEnd="@+id/tab1DUNLabel"
+        android:layout_alignRight="@+id/tab1DUNLabel"
+        android:layout_below="@+id/tab1DUNLabel"
         android:layout_marginTop="35dp"
         android:text="Full name" />
 
     <TextView
-        android:id="@+id/tab1EMLabel"
+        android:id="@+id/tab1DEMLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tab1FNLabel"
-        android:layout_alignRight="@+id/tab1FNLabel"
-        android:layout_below="@+id/tab1FNLabel"
+        android:layout_alignEnd="@+id/tab1DFNLabel"
+        android:layout_alignRight="@+id/tab1DFNLabel"
+        android:layout_below="@+id/tab1DFNLabel"
         android:layout_marginTop="35dp"
         android:text="Email" />
-
 
 </RelativeLayout>

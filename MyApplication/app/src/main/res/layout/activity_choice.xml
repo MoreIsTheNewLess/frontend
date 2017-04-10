@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:id="@+id/choicetitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="40dip"
+        android:text="Do you want to enter user or dealer mode?"
+        android:gravity="center"
+        android:textSize="30dip"/>
+    <TextView android:id="@+id/choiceexplanation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dip"
+        android:layout_marginBottom="40dip"
+        android:text="In User mode you can browse through products and get alerts for
+        your bills.
+
+In Dealer mode you can post your own products to sell.
+
+Try to make it attractive!"
+        android:gravity="center"
+        android:textSize="20dip"/>
+    <Button android:id="@+id/usermode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dip"
+        android:layout_alignTop="@id/choiceexplanation"
+        android:onClick="onUserClick"
+        android:text="USER MODE"/>
+    <Button android:id="@+id/dealermode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dip"
+        android:layout_alignTop="@id/usermode"
+        android:onClick="onDealerClick"
+        android:text="DEALER MODE"/>
+
+
+</RelativeLayout>

@@ -6,16 +6,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.siddharthsaha.smartpay_frontend.UserActivity">
+    tools:context="com.example.siddharthsaha.smartpay_frontend.DealerActivity">
 
-    <!--<TextView-->
-        <!--android:id="@+id/section_label"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
     <Button
-        android:id="@+id/suggest"
-        android:text = "Can I suggest you something?"
-        android:onClick="onSuggestClick"
+        android:id="@+id/deals"
+        android:text = "UPLOAD DEALS FILE"
+        android:onClick="onDealsClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

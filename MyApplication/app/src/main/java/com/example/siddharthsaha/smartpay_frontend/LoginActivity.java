@@ -23,9 +23,18 @@ public class LoginActivity extends AppCompatActivity {
             String pass = p.getText().toString();
             String password = assist.searchPass(uname);
             if(pass.equals(password)) {
-                Intent i = new Intent(this, UserActivity.class);
-                i.putExtra("Username", uname);
-                startActivity(i);
+
+                String type = assist.getType(uname);
+                if(type.equals("Dealer")) {
+                    Intent i = new Intent(this, DealerActivity.class);
+                    i.putExtra("Username", uname);
+                    startActivity(i);
+                }
+                else {
+                    Intent i = new Intent(this, UserActivity.class);
+                    i.putExtra("Username", uname);
+                    startActivity(i);
+                }
             }
             else {
                 Toast error = Toast.makeText(LoginActivity.this, "Username and password dont match", Toast.LENGTH_SHORT);
