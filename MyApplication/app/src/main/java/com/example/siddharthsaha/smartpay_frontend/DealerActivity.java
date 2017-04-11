@@ -1,7 +1,10 @@
 package com.example.siddharthsaha.smartpay_frontend;
 
+import android.app.ListActivity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +18,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,16 +28,22 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class DealerActivity extends AppCompatActivity {
 
     NotificationCompat.Builder notification;
     private static final int uniqueID = 21903;
-    String username, emailid, fullname;
+    String username, emailid, fullname, products, deals;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -97,10 +107,90 @@ public class DealerActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_GET_CONTENT);
+                        intent.setType("file/*");
+                        startActivityForResult(intent, 1);
                     }
                 });
         alertDialog.show();
 
+
+    }
+    public void  onActivityResult(int requestCode, int resultCode, Intent data){
+
+        switch (requestCode) {
+            case 1: {
+                products = new String("");
+                if(data == null)
+                    return;
+                String FilePath = data.getData().getPath();
+                File file = new File(FilePath);
+                BufferedReader br = null;
+                try {
+                    br = new BufferedReader(new FileReader(file));
+                    String currentLine;
+                    while((currentLine = br.readLine()) != null) {
+                        products = products + currentLine;
+                    }
+                    Toast test = Toast.makeText(DealerActivity.this, "File uploaded", Toast.LENGTH_SHORT);
+                    test.show();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Toast test = Toast.makeText(DealerActivity.this, e.toString(), Toast.LENGTH_SHORT);
+                    test.show();
+                } catch (IOException ea) {
+                    ea.printStackTrace();
+                    Toast test = Toast.makeText(DealerActivity.this, ea.toString(), Toast.LENGTH_SHORT);
+                    test.show();
+                } finally {
+                    try {
+                        if(br != null)
+                            br.close();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        Toast test = Toast.makeText(DealerActivity.this, ex.toString(), Toast.LENGTH_SHORT);
+                        test.show();
+                    }
+                }
+
+
+            }
+            case 2: {
+                deals = new String("");
+                if(data == null)
+                    return;
+                String FilePath = data.getData().getPath();
+                File file = new File(FilePath);
+                BufferedReader br = null;
+                try {
+                    br = new BufferedReader(new FileReader(file));
+                    String currentLine;
+                    while((currentLine = br.readLine()) != null) {
+                        deals = deals + currentLine;
+                    }
+                    Toast test = Toast.makeText(DealerActivity.this, "File uploaded", Toast.LENGTH_SHORT);
+                    test.show();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Toast test = Toast.makeText(DealerActivity.this, e.toString(), Toast.LENGTH_SHORT);
+                    test.show();
+                } catch (IOException ea) {
+                    ea.printStackTrace();
+                    Toast test = Toast.makeText(DealerActivity.this, ea.toString(), Toast.LENGTH_SHORT);
+                    test.show();
+                } finally {
+                    try {
+                        if(br != null)
+                            br.close();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        Toast test = Toast.makeText(DealerActivity.this, ex.toString(), Toast.LENGTH_SHORT);
+                        test.show();
+                    }
+                }
+            }
+        }
     }
 
 
@@ -115,6 +205,10 @@ public class DealerActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_GET_CONTENT);
+                        intent.setType("file/*");
+                        startActivityForResult(intent, 2);
                     }
                 });
         alertDialog.show();
