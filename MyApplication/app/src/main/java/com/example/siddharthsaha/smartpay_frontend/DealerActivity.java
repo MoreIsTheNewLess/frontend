@@ -43,7 +43,7 @@ public class DealerActivity extends AppCompatActivity {
 
     NotificationCompat.Builder notification;
     private static final int uniqueID = 21903;
-    String username, emailid, fullname, products, deals;
+    String username, vpaid, addr, products, deals;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -68,8 +68,8 @@ public class DealerActivity extends AppCompatActivity {
         DataBaseAssistant assist = new DataBaseAssistant(this);
 
         this.username = getIntent().getStringExtra("Username");
-        emailid = assist.getEmail(username);
-        fullname = assist.getFullName(username);
+        vpaid = assist.getVPA(username);
+        addr = assist.getAddress(username);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
@@ -290,8 +290,8 @@ public class DealerActivity extends AppCompatActivity {
                     DealerInfoTab tab1 = new DealerInfoTab();
                     Bundle bundle = new Bundle();
                     bundle.putString("USERNAME_KEY", username);
-                    bundle.putString("EMAIL_KEY", emailid);
-                    bundle.putString("FULLNAME_KEY", fullname);
+                    bundle.putString("VPA_KEY", vpaid);
+                    bundle.putString("ADDRESS_KEY", addr);
                     tab1.setArguments(bundle);
                     return tab1;
                 case 1:

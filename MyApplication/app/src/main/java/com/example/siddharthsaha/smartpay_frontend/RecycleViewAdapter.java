@@ -13,32 +13,32 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.MyViewHolder> {
-    private String[] mDataset;
-    private String[] mDescription;
-    private int[] photoid;
+    private String[] nameDataSet;
+    private String[] dealDataSet;
+    private String[] categoryDataSet;
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         public CardView mCardView;
-        public TextView mTextView;
-        public TextView textView;
-        public ImageView mImageView;
+        public TextView dealView;
+        public TextView addressView;
+        public TextView nameView;
         public MyViewHolder(View v) {
             super(v);
 
             mCardView = (CardView) v.findViewById(R.id.cv);
-            mImageView = (ImageView) v.findViewById(R.id.person_photo);
-            mTextView = (TextView) v.findViewById(R.id.person_name);
-            textView = (TextView) v.findViewById(R.id.person_age);
+            nameView = (TextView) v.findViewById(R.id.product_name);
+            dealView = (TextView) v.findViewById(R.id.product_deal);
+            addressView = (TextView) v.findViewById(R.id.product_address);
         }
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecycleViewAdapter(String[] myDataset, String[] mDescription, int[] photoid) {
-        mDataset = myDataset;
-        this.mDescription = mDescription;
-        this.photoid = photoid;
+    public RecycleViewAdapter(String[] nameDataSet, String[] dealDataSet, String[] categoryDataSet) {
+        this.nameDataSet = nameDataSet;
+        this.dealDataSet = dealDataSet;
+        this.categoryDataSet = categoryDataSet;
     }
 
     // Create new views (invoked by the layout manager)
@@ -55,13 +55,13 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.mTextView.setText(mDataset[position]);
-        holder.textView.setText(mDescription[position]);
-        holder.mImageView.setImageResource(photoid[position]);
+        holder.dealView.setText(dealDataSet[position]);
+        holder.addressView.setText("Diamond District, HAL Old Airport Rd, ISRO Colony, Domlur, Bengaluru, Karnataka 56008, India");
+        holder.nameView.setText(nameDataSet[position] + " - " + categoryDataSet[position]);
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.length;
+        return dealDataSet.length;
     }
 }

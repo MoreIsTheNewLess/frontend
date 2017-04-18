@@ -18,21 +18,21 @@
         android:singleLine="true" />
 
     <TextView
-        android:id="@+id/tab1DFNDisplay"
+        android:id="@+id/tab1DVPADisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tab1DFNLabel"
-        android:layout_alignLeft="@+id/tab1DFNLabel"
-        android:layout_marginLeft="80dp"
+        android:layout_alignBaseline="@+id/tab1DVPALabel"
+        android:layout_alignLeft="@+id/tab1DVPALabel"
+        android:layout_marginLeft="43dp"
         android:singleLine="true" />
 
     <TextView
-        android:id="@+id/tab1DEMDisplay"
+        android:id="@+id/tab1DADDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tab1DEMLabel"
-        android:layout_alignLeft="@+id/tab1DEMLabel"
-        android:layout_marginLeft="55dp"
+        android:layout_alignBaseline="@+id/tab1DADLabel"
+        android:layout_alignLeft="@+id/tab1DADLabel"
+        android:layout_marginLeft="68dp"
         android:singleLine="true" />
 
     <TextView
@@ -45,26 +45,26 @@
         android:layout_marginLeft="96dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="159dp"
-        android:text="Username " />
+        android:text="Username: " />
 
     <TextView
-        android:id="@+id/tab1DFNLabel"
+        android:id="@+id/tab1DVPALabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/tab1DUNLabel"
         android:layout_alignRight="@+id/tab1DUNLabel"
         android:layout_below="@+id/tab1DUNLabel"
         android:layout_marginTop="35dp"
-        android:text="Full name" />
+        android:text="VPA: " />
 
     <TextView
-        android:id="@+id/tab1DEMLabel"
+        android:id="@+id/tab1DADLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tab1DFNLabel"
-        android:layout_alignRight="@+id/tab1DFNLabel"
-        android:layout_below="@+id/tab1DFNLabel"
+        android:layout_alignEnd="@+id/tab1DVPALabel"
+        android:layout_alignRight="@+id/tab1DVPALabel"
+        android:layout_below="@+id/tab1DVPALabel"
         android:layout_marginTop="35dp"
-        android:text="Email" />
+        android:text="Address: " />
 
 </RelativeLayout>

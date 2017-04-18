@@ -12,20 +12,20 @@ import android.widget.TextView;
  */
 
 public class DealerInfoTab extends Fragment{
-    private TextView usernameT, fullnameT, emailT;
+    private TextView usernameT, VPAT, addressT;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.dealertab1accinfo, container, false);
         usernameT = (TextView) rootView.findViewById(R.id.tab1DUNDisplay);
-        fullnameT = (TextView) rootView.findViewById(R.id.tab1DFNDisplay);
-        emailT = (TextView) rootView.findViewById(R.id.tab1DEMDisplay);
+        VPAT = (TextView) rootView.findViewById(R.id.tab1DVPADisplay);
+        addressT = (TextView) rootView.findViewById(R.id.tab1DADDisplay);
         String user=this.getArguments().getString("USERNAME_KEY");
-        String email = this.getArguments().getString("EMAIL_KEY");
-        String name = this.getArguments().getString("FULLNAME_KEY");
+        String VPA = this.getArguments().getString("VPA_KEY");
+        String address = this.getArguments().getString("ADDRESS_KEY");
         usernameT.setText(user);
-        fullnameT.setText(name);
-        emailT.setText(email);
+        VPAT.setText(VPA);
+        addressT.setText(address);
         return rootView;
     }
 }

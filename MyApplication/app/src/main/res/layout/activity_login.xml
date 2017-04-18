@@ -135,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dip"
                 android:layout_marginBottom="40dip"
-                android:text="New to ICICI? Register now"
+                android:text="Dealer? Register now"
                 android:gravity="center"
                 android:textSize="20dip"
                 android:onClick="onButtonClick"

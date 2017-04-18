@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class DataBaseAssistant extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String DATABASE_NAME = "accounts.db";
     private static final String TABLE_NAME = "accounts";
     private static final String COLUMN_ID = "id";
@@ -22,9 +22,10 @@ public class DataBaseAssistant extends SQLiteOpenHelper {
     private static final String COLUMN_EMAIL = "email";
     private static final String COLUMN_UNAME = "uname";
     private static final String COLUMN_PASS = "pass";
-    private static final String COLUMN_TYPE = "type";
+    private static final String COLUMN_VPA = "VPA";
+    private static final String COLUMN_ADDRESS = "address";
     SQLiteDatabase db;
-    private static final String TABLE_CREATE = "create table accounts (id integer primary key not null , " + "name text not null , email text not null , uname text not null , pass text not null, type text not null);" ;
+    private static final String TABLE_CREATE = "create table accounts (id integer primary key not null , " + "name text not null , email text not null , uname text not null , pass text not null, VPA text not null, address text not null);" ;
 
     public DataBaseAssistant(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -90,9 +91,9 @@ public class DataBaseAssistant extends SQLiteOpenHelper {
         }
         return b;
     }
-    public String getType(String uname) {
+    public String getVPA(String uname) {
         db = this.getReadableDatabase();
-        String query = "select uname, type from " + TABLE_NAME;
+        String query = "select uname, VPA from " + TABLE_NAME;
         Cursor cursor = db.rawQuery(query, null);
         String a,b;
         b = "not found";
@@ -107,6 +108,43 @@ public class DataBaseAssistant extends SQLiteOpenHelper {
         }
         return b;
     }
+
+    public String getAddress(String uname) {
+        db = this.getReadableDatabase();
+        String query = "select uname, address from " + TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+        String a,b;
+        b = "not found";
+        if(cursor.moveToFirst()) {
+            do {
+                a = cursor.getString(0);
+                if(a.equals(uname)) {
+                    b = cursor.getString(1);
+                    break;
+                }
+            }while(cursor.moveToNext());
+        }
+        return b;
+    }
+//    public String getType(String uname) {
+//        db = this.getReadableDatabase();
+//        String query = "select uname, type from " + TABLE_NAME;
+//        Cursor cursor = db.rawQuery(query, null);
+//        String a,b;
+//        b = "not found";
+//        if(cursor.moveToFirst()) {
+//            do {
+//                a = cursor.getString(0);
+//                if(a.equals(uname)) {
+//                    b = cursor.getString(1);
+//                    break;
+//                }
+//            }while(cursor.moveToNext());
+//        }
+//        return b;
+//    }
+
+
     public void insertAccount(Account acc) {
         db=this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -118,7 +156,8 @@ public class DataBaseAssistant extends SQLiteOpenHelper {
         values.put(COLUMN_EMAIL, acc.getEmail());
         values.put(COLUMN_UNAME, acc.getUsername());
         values.put(COLUMN_PASS, acc.getPassword());
-        values.put(COLUMN_TYPE, acc.getType());
+        values.put(COLUMN_VPA, acc.getVPA());
+        values.put(COLUMN_ADDRESS, acc.getAddress());
         db.insert(TABLE_NAME, null, values);
         db.close();
 

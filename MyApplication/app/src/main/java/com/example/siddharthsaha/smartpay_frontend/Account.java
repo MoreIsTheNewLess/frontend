@@ -5,7 +5,7 @@ package com.example.siddharthsaha.smartpay_frontend;
  */
 
 public class Account {
-    String name, emailid, uname, pas, type;
+    String name, emailid, uname, pas, vpa, address;
 
     public void setName(String name) {
 
@@ -45,13 +45,32 @@ public class Account {
 
         return this.pas;
     }
-
-    public String getType() {
-        return this.type;
+    public String getVPA() {
+        return this.vpa;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setVPA(String vpa) {
+
+        this.vpa = vpa;
     }
+
+    public String getAddress() {
+
+        return this.address;
+    }
+
+    public void setAddress(String address) {
+
+        this.address = address;
+    }
+
+
+//    public String getType() {
+//        return this.type;
+//    }
+//
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 }
 

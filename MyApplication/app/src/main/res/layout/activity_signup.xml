@@ -95,12 +95,29 @@
                 android:singleLine="true"
                 android:layout_marginTop="5dip"/>
             <!-- Register Button -->
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="match_parent"
+            <!--<Spinner-->
+                <!--android:id="@+id/spinner1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@android:drawable/btn_dropdown"-->
+                <!--android:spinnerMode="dropdown" />-->
+            <TextView android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown" />
+                android:textColor="#372c24"
+                android:text="UPI VPA"/>
+            <EditText android:id="@+id/reg_vpa"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginTop="5dip"/>
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="Shop address"/>
+            <EditText android:id="@+id/reg_address"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"/>
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="fill_parent"
